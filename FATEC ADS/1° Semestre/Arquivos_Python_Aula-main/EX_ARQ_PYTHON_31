@@ -1,0 +1,39 @@
+import os
+
+#Declaração de Variáveis Globais
+
+i: int = 0
+quadrado: int = 0
+dir01: str = 'C:\\temp\\exercicios'
+arq01: str = 'ex31.txt'
+
+#Criando pasta
+def criar_pasta():
+    os.makedirs(dir01,exist_ok=True)
+    os.chmod(dir01, 0o744)
+
+#Gravando o arquivo
+def gravar_arquivo(caminho, numeros):
+    if os.path.exists(caminho):
+        os.remove(caminho)                #essa é a parte da verificação que o exercício pede
+        with open(caminho, "w") as file:
+            for i, num in enumerate(numeros):
+                file.write(f"{i+1}º número: {num}\n")
+
+def main():
+    global quadrado
+    criar_pasta()
+    caminho = os.path.join(dir01, arq01)
+
+    numeros = []
+
+    for i in range(10, 151):
+        quadrado = i**2
+        numeros.append(quadrado)           #calcula e guarda o resultado na lista
+        print(i, "ao quadrado = ", quadrado)
+
+    gravar_arquivo(caminho, numeros)
+
+
+if __name__ == "__main__":
+    main()

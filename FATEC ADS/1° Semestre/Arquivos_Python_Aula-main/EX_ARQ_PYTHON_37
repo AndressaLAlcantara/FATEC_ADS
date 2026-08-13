@@ -1,0 +1,51 @@
+import os
+
+#Declaração de Variáveis Globais
+
+valor1: int = 0
+fibstart: int = 0
+fibnext: int = 1
+fibnext2: int = 0
+fibindx: int = 1
+dir01: str = 'C:\\temp\\exercicios'
+arq01: str = 'ex37.txt'
+
+#Criando pasta
+def criar_pasta():
+    os.makedirs(dir01, exist_ok=True)
+    os.chmod(dir01, 0o744)
+
+#Gravando o arquivo
+def gravar_arquivos(caminho, numeros):
+    if os.path.exists(caminho):
+        os.remove(caminho)
+        with open(caminho, "w") as file:
+            for i, num in enumerate(numeros):
+                file.write(f"{i+1}° número: {num}\n")
+
+def main():
+    global valor1, fibstart, fibnext, fibnext2, fibindx, dir01, arq01
+    criar_pasta()
+    caminho = os.path.join(dir01, arq01)
+
+    numeros = []
+
+    valor1 = int(input("Digite um número para iniciar a Sequência de Fibonacci: "))
+    numeros.append(valor1)
+    if (valor1 <= 0):
+        print('Valor inválido, digitar um número inteiro positivo')
+    else:
+        while (fibindx <= valor1):
+            print('0', fibindx, '° número da Sequência de Fibonacci é: ', fibstart)
+            fibnext2 = fibstart + fibnext
+            fibstart = fibnext
+            fibindx +=1
+
+    gravar_arquivos(caminho, numeros)
+
+
+
+if __name__ == "__main__":
+    main()
+
+

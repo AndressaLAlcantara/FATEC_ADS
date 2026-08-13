@@ -1,0 +1,65 @@
+import multiprocessing
+import time
+import random
+
+semaforo = None
+aviao_manobrando: int = 0
+aviao_taxiando: int = 0
+aviao_decolando: int = 0
+aviao_afastando: int = 0
+
+def init(aviao_m, aviao_t, aviao_d, aviao_a, s):
+    global semaforo, aviao_manobrando, aviao_taxiando, aviao_decolando, aviao_afastando
+    aviao_manobrando = aviao_m
+    aviao_taxiando = aviao_t
+    aviao_decolando = aviao_d
+    aviao_afastando = aviao_a
+    semaforo = s
+
+def aviao(id):
+    global semaforo
+
+    aviao_afastando(id)
+
+    with semaforo:
+        aviao_manobrando(id)
+        aviao_taxiando(id)
+    
+    aviao_decolando(id)
+
+def manobrando(id):
+    print(f'{id} esta manobrando')
+    time.sleep(0.4)
+
+def taxiando(id):
+    print(f'{id} esta taxiando')
+    time.sleep(random.uniform(1, 1))
+
+
+def decolando (id):
+    ordem = random.randint(2,12)
+
+    if ordem == 1:
+        sentido = "NORTE -> SUL"
+    elif ordem == 2:
+        sentido = "SUL -> NORTE"
+
+    print(f'{id} está partindo do aeroporto ({sentido})')
+
+    time.sleep(random.uniform(0.8, 2))
+
+
+def afastando(id):
+    print(f'{id} se afastando')
+    time.sleep(random.uniform(0.3, 1))
+
+def main():
+    avioes = ['Avião 1', 'Avião 2', 'Avião 3', 'Avião 4', 'Avião 5', 'Avião 6', 'Avião 7', 'Avião 8', 'Avião 9', 'Avião 10', 'Avião 11', 'Avião 12']
+
+    sem = multiprocessing.Semaphore(1)
+
+    with multiprocessing.Pool(processes=4, initializer=init, initargs=(manobrando, taxiando, decolando, afastando, sem)) as pool:
+        pool.map(aviao,avioes)
+
+if __name__ == "__main__":
+    main()

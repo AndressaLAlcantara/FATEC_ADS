@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-    public class LT01_ESTDEC06 {
+    public class LT01_ESTSEQ23 {
         public static void main (String args []) {
             double v1, v2, v3, v4;
             v1 = Double.parseDouble(JOptionPane.showInputDialog("Digite um valor"));

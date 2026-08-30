@@ -8,20 +8,20 @@ import javax.swing.JOptionPane;
             v4 = Double.parseDouble(JOptionPane.showInputDialog("Digite um quarto valor"));
             if (v4>v3)
             {
-                System.out.print("Os valores em ordem crescente s„o: " +v1 +v2 +v3 +v4);
+                System.out.print("Os valores em ordem crescente s√£o: " +v1 +v2 +v3 +v4);
             }
             else {
                 if (v4>v2)
                 {
-                    System.out.print("Os valores em ordem crescente s„o: " +v1 +v2 +v4 +v3);
+                    System.out.print("Os valores em ordem crescente s√£o: " +v1 +v2 +v4 +v3);
                 }
                 else {
                     if (v4>v1)
                     {
-                        System.out.print("Os valores em ordem crescente s„o: " +v1 +v4 +v2 +v3);
+                        System.out.print("Os valores em ordem crescente s√£o: " +v1 +v4 +v2 +v3);
                     }
                     else {
-                        System.out.print("Os valores em ordem crescente s„o: " +v4 +v1 +v2 +v3);
+                        System.out.print("Os valores em ordem crescente s√£o: " +v4 +v1 +v2 +v3);
                     }
                 }
             }

@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
             if (x>y)
             {
                 dif = x - y;
-                System.out.print(dif + "O valor da diferença é");
+                System.out.print(dif + "O valor da diferenÃ§a Ã©");
             }
             else {
                 dif = y - x;
-                System.out.print(dif + "O valor da diferença é");
+                System.out.print(dif + "O valor da diferenÃ§a Ã©");
             }
         }
     }

@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-    public class LT01_ESTDEC03 {
+    public class LT01_ESTSEQ20 {
         public static void main (String args []) {
             double delta, a, b, c, x1, x2;
             a = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do coeficiente A"));

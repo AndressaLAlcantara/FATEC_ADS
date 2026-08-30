@@ -8,12 +8,12 @@ import javax.swing.JOptionPane;
             delta = (Math.pow(b,2))-(4*a*c);
                 if (delta<0)
                 {
-                    System.out.print("Não existem raízes reais");
+                    System.out.print("NÃ£o existem raÃ­zes reais");
                 }
                 else {
                     x1 = (-b + (Math.sqrt(delta)))/(2*a);
                     x2 = (-b - (Math.sqrt(delta)))/(2*a);
-                    System.out.print("As raízes são" +x1 +x2);
+                    System.out.print("As raÃ­zes sÃ£o" +x1 +x2);
                 }
         }
     }

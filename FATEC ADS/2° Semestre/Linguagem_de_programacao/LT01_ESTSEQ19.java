@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-    public class LT01_ESTDEC02 {
+    public class LT01_ESTSEQ19 {
         public static void main (String args []) {
             double x, y, maior;
             x = Double.parseDouble(JOptionPane.showInputDialog("Digite um número real"));

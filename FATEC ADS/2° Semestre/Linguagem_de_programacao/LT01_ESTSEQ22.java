@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-    public class LT01_ESTDEC05 {
+    public class LT01_ESTSEQ22 {
         public static void main (String args []) {
             int x1, x2;
             x1 = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor inteiro"));

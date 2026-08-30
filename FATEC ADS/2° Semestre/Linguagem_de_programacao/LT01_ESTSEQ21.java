@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-    public class LT01_ESTDEC04 {
+    public class LT01_ESTSEQ21 {
         public static void main (String args []) {
             double n1, n2, n3, n4, media;
             n1 = Double.parseDouble(JOptionPane.showInputDialog("Digite a primeira nota"));

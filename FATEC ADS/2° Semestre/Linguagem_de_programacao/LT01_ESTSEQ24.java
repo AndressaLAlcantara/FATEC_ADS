@@ -5,20 +5,20 @@ import javax.swing.JOptionPane;
             x = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor inteiro"));
             if (x%2 == 0 && x%3 == 0)
             {
-                System.out.print("O valor È divisÌvel por 2 e por 3");
+                System.out.print("O valor √© divis√≠vel por 2 e por 3");
             }
             else {
                 if (x%2 ==0 && x%3 != 0)
                 {
-                System.out.print("O valor È divisÌvel por 2, mas n„o por 3");
+                System.out.print("O valor √© divis√≠vel por 2, mas n√£o por 3");
                 }
                 else {
                     if (x%2 != 0 && x%3 == 0)
                     {
-                        System.out.print("O valor n„o È divisÌvel por 2, mas sim por 3");
+                        System.out.print("O valor n√£o √© divis√≠vel por 2, mas sim por 3");
                     }
                     else {
-                        System.out.print("O valor n„o È divisÌvel por 2 e por 3");
+                        System.out.print("O valor n√£o √© divis√≠vel por 2 e por 3");
                     }
                     
                 }

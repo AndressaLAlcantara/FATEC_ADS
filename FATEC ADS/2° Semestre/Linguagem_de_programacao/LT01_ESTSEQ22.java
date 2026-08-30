@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
             x2 = Integer.parseInt(JOptionPane.showInputDialog("Digite outro valor inteiro"));
             if (x1>x2)
             {
-                System.out.print("Os valores em ordem crescente s„o: " + x2 + x1);
+                System.out.print("Os valores em ordem crescente s√£o: " + x2 + x1);
             }
             else {
-                System.out.print("Os valores em ordem crescente s„o: " + x1 + x2);
+                System.out.print("Os valores em ordem crescente s√£o: " + x1 + x2);
             }
         }
     }

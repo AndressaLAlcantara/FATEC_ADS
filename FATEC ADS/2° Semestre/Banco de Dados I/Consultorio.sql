@@ -1,0 +1,55 @@
+CREATE DATABASE Consultorio; #create database cria um novo banco de dados, consultorio é o nome do banco de dados
+USE Consultorio; #selecioa o banco que queremos usar
+
+CREATE TABLE CONVENIO (
+	CODCONV INT PRIMARY KEY,  #Chave primária
+    NOMECONVENIO VARCHAR(11), #VARCHAR(11) = texto de até 11 caracteres
+    FONECON CHAR(15) #Em SQL, a vírgula separa as definições das colunas. A última coluna não recebe vírgula.
+);
+
+INSERT INTO CONVENIO (CODCONV, NOMECONVENIO, FONECON) values (1, 'SUL AMERICA', 6012378), (2, 'SAUDE TOTAL', 999098), (3, 'GOOD HEALTH', 776544);  
+
+CREATE TABLE PACIENTE (
+	IDPACIENTE INT PRIMARY KEY,
+    NOMEPAC VARCHAR(14),
+    SEXO CHAR(1) check (SEXO='F' or SEXO='M'), #O campo sexo só vai aceitar F ou M
+    DATANASC DATE,
+    FONE CHAR(15),
+    CODCONV INT, foreign key(CODCONV) references CONVENIO(CODCONV) #CODCONV da tabela PACIENTE deve corresponder a um CODCONV existente na tabela CONVENIO
+    );
+
+INSERT INTO PACIENTE (IDPACIENTE, NOMEPAC, SEXO, DATANASC, FONE, CODCONV) values (1, 'JOAO DA SILVA', 'M', '1998-10-10', '5566667', '1'), (2, 'VERA RODRIGUES', 'F', '1992-08-10', '5543211', '2'), (3, 'PAULO RANGEL', 'M', '1990-04-12', '8874662', '3');
+
+CREATE TABLE ESPECIALIDADE (
+		CODESPEC INT PRIMARY KEY,
+        NOMEESPEC CHAR(13)
+);
+
+INSERT INTO ESPECIALIDADE (CODESPEC, NOMEESPEC) values (1, 'CLINICA GERAL'), (2, 'ORTOPEDIA');
+
+CREATE TABLE MEDICO (
+	IDMEDICO INT PRIMARY KEY,
+    NOMEMED VARCHAR(6),
+    SEXO CHAR(1) check (SEXO='F' or SEXO='M'),
+    CRM NUMERIC,
+    CODESPEC INT, foreign key(CODESPEC) references ESPECIALIDADE(CODESPEC)
+);
+
+INSERT INTO MEDICO (IDMEDICO, NOMEMED, SEXO, CRM, CODESPEC) values (1, 'PAULO', 'M', '50345', '1'), (2, 'MARINA', 'F', '12345', '2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

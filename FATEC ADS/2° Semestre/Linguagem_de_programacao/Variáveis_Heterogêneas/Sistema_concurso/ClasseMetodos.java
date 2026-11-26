@@ -52,8 +52,8 @@ public class ClasseMetodos {
             {
                 if (candidatos[i].pontos < candidatos[j].pontos || 
                         (candidatos[i].pontos == candidatos[j].pontos && candidatos[i].idade < candidatos[j].idade || 
-                        (candidatos[i].pontos == candidatos[j].pontos && candidatos[i].idade == candidatos[j].idade && candidatos[i].renda < candidatos[j].renda || 
-                        (candidatos[i].pontos == candidatos[j].pontos && candidatos[i].idade == candidatos[j].idade && candidatos[i].renda == candidatos[j].renda && candidatos[i].dependentes < candidatos[j].dependentes))))
+                        (candidatos[i].pontos == candidatos[j].pontos && candidatos[i].idade == candidatos[j].idade && candidatos[i].renda > candidatos[j].renda || 
+                        (candidatos[i].pontos == candidatos[j].pontos && candidatos[i].idade == candidatos[j].idade && candidatos[i].renda == candidatos[j].renda && candidatos[i].dependentes > candidatos[j].dependentes))))
                 {
                     aux = candidatos[i];
                     candidatos[i] = candidatos[j];

@@ -22,7 +22,7 @@ public class ClasseMetodos {
         return candidatos;
     }
     
-    public Candidatos FIntroduzCandidato (Candidatos [] candidatos, int numero) //int numero é o numero da inscrição que queremos procurar, int inicio é a posição do vetor onde começaremos a busca
+    public Candidatos FIntroduzCandidato (Candidatos [] candidatos, int numero) //int numero é o numero da inscrição que queremos procurar
     {
         return FBuscaCandidato (candidatos, numero, 0);     
     }
